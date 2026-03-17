@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --brand-red: #ff3b3b;
+  --brand-yellow: #ffec1b;
+  --brand-gray: #eeeeee;
+  --brand-black: #000000;
+  --background: #ffffff;
+  --foreground: #000000;
+  --muted: #4a4a4a;
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --radius-lg: 20px;
+  --radius-md: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-red: var(--brand-red);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-black: var(--brand-black);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+  --radius-card: var(--radius-lg);
+  --radius-button: var(--radius-md);
+  --shadow-card: var(--card-shadow);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus visibility for a11y */
+:focus-visible {
+  outline: 2px solid var(--brand-red);
+  outline-offset: 2px;
+}
