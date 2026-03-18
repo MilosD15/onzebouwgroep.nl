@@ -1,6 +1,6 @@
-/** Publika fajlovi na GitHub Pages (basePath) moraju imati prefiks repoa */
 export default function publicUrl(path: string) {
-  const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
-  const p = path.startsWith('/') ? path : `/${path}`
-  return base ? `${base}${p}` : p
+  // Return a relative URL so the same static export can work at:
+  // - `https://domain.com/`
+  // - `https://domain.com/<repo>/`
+  return path.startsWith('/') ? path.slice(1) : path
 }

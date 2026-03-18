@@ -1,13 +1,11 @@
 import type { NextConfig } from 'next'
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-
 const nextConfig: NextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  ...(basePath
-    ? { basePath, assetPrefix: basePath }
-    : {}),
+  // Make static export work under both `/` and `/<repo>/` without needing basePath
+  // by emitting relative asset URLs for `/_next/...`
+  assetPrefix: '.',
 }
 
 export default nextConfig

@@ -9,8 +9,8 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: 'swap',
 })
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-const logoSharePath = basePath ? `${basePath}/logo-final-web.png` : '/logo-final-web.png'
+const faviconPath = 'logo-final-web.png'
+const logoSharePath = '/logo-final-web.png'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://onzebouwgroep.nl'),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     'bouwprojecten Nederland',
   ],
   icons: {
-    icon: logoSharePath,
+    icon: faviconPath,
   },
   openGraph: {
     title: 'Onze Bouwgroep | Schilderwerk, Renovatie en Bouwprojecten',
