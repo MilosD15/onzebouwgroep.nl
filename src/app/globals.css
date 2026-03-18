@@ -29,6 +29,7 @@ html {
   --radius-card: var(--radius-lg);
   --radius-button: var(--radius-md);
   --shadow-card: var(--card-shadow);
+  --test-var: 'test';
 }
 
 body {
