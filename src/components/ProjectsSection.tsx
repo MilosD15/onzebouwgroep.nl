@@ -41,6 +41,14 @@ export default function ProjectsSection() {
                   className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-black/10"
                   aria-hidden
                 />
+                <div
+                  className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center"
+                  aria-hidden
+                >
+                  <span className="shine-text bg-gradient-to-r from-brand-red via-brand-yellow to-brand-red bg-clip-text text-transparent text-sm font-semibold uppercase tracking-widest sm:text-base">
+                    Binnenkort beschikbaar...
+                  </span>
+                </div>
               </div>
               <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                 <span className="text-xs font-semibold uppercase tracking-wider text-brand-red">
@@ -86,6 +94,14 @@ export default function ProjectsSection() {
                       className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-black/5"
                       aria-hidden
                     />
+                    <div
+                      className="absolute inset-0 z-10 flex items-center justify-center px-4 text-center"
+                      aria-hidden
+                    >
+                      <span className="shine-text bg-gradient-to-r from-brand-red via-brand-yellow to-brand-red bg-clip-text text-transparent text-xs font-semibold uppercase tracking-widest">
+                        Binnenkort beschikbaar...
+                      </span>
+                    </div>
                   </div>
                   <div className="p-5">
                     <h3 className="text-lg font-semibold text-foreground">

@@ -63,7 +63,15 @@ export default function Hero() {
               aria-hidden
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-black/10" aria-hidden />
-            <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-(--radius-md) bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
+            <div
+              className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center"
+              aria-hidden
+            >
+              <span className="shine-text bg-gradient-to-r from-brand-red via-brand-yellow to-brand-red bg-clip-text text-transparent text-sm font-semibold uppercase tracking-widest sm:text-base">
+                Binnenkort beschikbaar...
+              </span>
+            </div>
+            <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 rounded-(--radius-md) bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
               <Image
                 src={publicUrl('/logo-final.svg')}
                 alt=""

@@ -49,3 +49,18 @@ body {
   outline: 2px solid var(--brand-red);
   outline-offset: 2px;
 }
+
+/* Shining text effect for image-less placeholders */
+.shine-text {
+  background-size: 200% 100%;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%
+  }
+  100% {
+    background-position: 200% 50%
+  }
+}
