@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { company, contact } from '@/content/site'
 import FadeIn from '@/components/FadeIn'
-import ContactForm from '@/components/ContactForm'
 
 const mapEmbedSrc =
   'https://maps.google.com/maps?q=Venusstraat+68,+2402+XS+Alphen+aan+den+Rijn,+Nederland&t=&z=15&ie=UTF8&iwloc=&output=embed'
@@ -38,7 +37,7 @@ export default function ContactSection() {
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-12 grid gap-10 lg:grid-cols-1">
           <FadeIn>
             <div className="space-y-6 rounded-[var(--radius-lg)] border border-black/5 bg-brand-gray/50 p-6 sm:p-8">
               <div>
@@ -77,10 +76,6 @@ export default function ContactSection() {
                 KVK: {company.kvk} · {company.legalForm}
               </p>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.08}>
-            <ContactForm />
           </FadeIn>
         </div>
 

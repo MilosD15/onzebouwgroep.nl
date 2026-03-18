@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { about } from '@/content/site'
 import FadeIn from '@/components/FadeIn'
 
@@ -23,14 +22,17 @@ export default function AboutSection() {
             </p>
           </FadeIn>
           <FadeIn delay={0.08}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] bg-brand-gray shadow-[var(--shadow-card)] ring-1 ring-black/5 lg:aspect-[5/4]">
-              <Image
-                src={about.imageSrc}
-                alt={about.imageAlt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+            <div className="relative aspect-4/3 overflow-hidden rounded-(--radius-lg) bg-brand-gray shadow-(--shadow-card) ring-1 ring-black/5 lg:aspect-5/4">
+              <div
+                className="absolute inset-0 opacity-30"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px)',
+                  backgroundSize: '28px 28px',
+                }}
+                aria-hidden
               />
+              <div className="absolute inset-0 bg-linear-to-br from-black/10 via-transparent to-black/0" aria-hidden />
             </div>
           </FadeIn>
         </div>

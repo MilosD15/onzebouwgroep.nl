@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { company, footer, nav } from '@/content/site'
+import publicUrl from '@/lib/publicUrl'
 
 export default function Footer() {
   return (
@@ -7,11 +9,17 @@ export default function Footer() {
       <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2" aria-hidden>
-              <span className="h-10 w-1.5 shrink-0 rounded-full bg-brand-yellow" />
-              <span className="h-10 w-1.5 shrink-0 -translate-x-1 rounded-full bg-brand-red" />
+            <div className="flex items-center gap-3">
+              <Image
+                src={publicUrl('/logo-final.svg')}
+                alt={`${company.name} logo`}
+                width={100}
+                height={24}
+                className="h-6 w-auto opacity-95"
+                priority
+              />
+              <span className="text-xl font-bold tracking-tight">{company.name}</span>
             </div>
-            <p className="mt-3 text-xl font-bold tracking-tight">{company.name}</p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
               {footer.shortDescription}
             </p>

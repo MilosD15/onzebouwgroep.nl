@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { company, hero } from '@/content/site'
 import FadeIn from '@/components/FadeIn'
+import publicUrl from '@/lib/publicUrl'
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
       className="relative overflow-hidden bg-brand-gray"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-brand-gray to-brand-gray/80" />
+      <div className="absolute inset-0 bg-linear-to-br from-white via-brand-gray to-brand-gray/80" />
       <div className="absolute right-0 top-0 h-[420px] w-[420px] translate-x-1/4 -translate-y-1/4 rounded-full bg-brand-yellow/25 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-[320px] w-[320px] -translate-x-1/4 translate-y-1/4 rounded-full bg-brand-red/10 blur-3xl" />
 
@@ -31,13 +32,13 @@ export default function Hero() {
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center rounded-[var(--radius-md)] bg-brand-red px-6 py-3.5 text-base font-semibold text-white shadow-md transition-transform hover:scale-[1.02] hover:bg-brand-red/95"
+              className="inline-flex items-center justify-center rounded-(--radius-md) bg-brand-red px-6 py-3.5 text-base font-semibold text-white shadow-md transition-transform hover:scale-[1.02] hover:bg-brand-red/95"
             >
               {hero.ctaPrimary}
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center rounded-[var(--radius-md)] border-2 border-foreground/15 bg-white px-6 py-3.5 text-base font-semibold transition-colors hover:border-brand-red/40 hover:bg-brand-gray/50"
+              className="inline-flex items-center justify-center rounded-(--radius-md) border-2 border-foreground/15 bg-white px-6 py-3.5 text-base font-semibold transition-colors hover:border-brand-red/40 hover:bg-brand-gray/50"
             >
               {hero.ctaSecondary}
             </Link>
@@ -51,18 +52,27 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.12} className="order-1 lg:order-2">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] bg-foreground/5 shadow-[var(--shadow-card)] ring-1 ring-black/5">
-            <Image
-              src={hero.imageSrc}
-              alt={hero.imageAlt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-(--radius-lg) bg-foreground/5 shadow-(--shadow-card) ring-1 ring-black/5">
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage:
+                  'linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px)',
+                backgroundSize: '32px 32px',
+              }}
+              aria-hidden
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10" aria-hidden />
-            <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-[var(--radius-md)] bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
-              <Image src="/logo.svg" alt="" width={100} height={28} className="h-7 w-auto opacity-90" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-black/10" aria-hidden />
+            <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-(--radius-md) bg-white/95 px-3 py-2 shadow-sm backdrop-blur-sm">
+              <Image
+                src={publicUrl('/logo-final.svg')}
+                alt=""
+                width={100}
+                height={28}
+                className="h-7 w-auto opacity-90"
+                priority
+              />
+              <span className="text-xs font-semibold text-foreground/90">Onze Bouwgroep</span>
             </div>
           </div>
         </FadeIn>

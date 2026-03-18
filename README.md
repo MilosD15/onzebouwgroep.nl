@@ -16,18 +16,14 @@ npm run lint
 npm run build
 ```
 
-## Contactformulier (Web3Forms)
+## Contact
 
-1. Key aanmaken op [web3forms.com](https://web3forms.com)
-2. `.env.example` → `.env.local`
-3. `WEB3FORMS_ACCESS_KEY=jouw_key`
-
-Zonder key: melding in het formulier; bellen en e-mail blijven werken.
+Het contactformulier is verwijderd. Bellen en e-mailen blijven werken via de contactsectie.
 
 ## Logo & beelden
 
-- **Logo:** `public/logo.svg`
-- **Foto’s:** `public/images/` — paden in `src/content/site.ts` (`hero.imageSrc`, `about.imageSrc`, per project `imageSrc`)
+- **Logo:** `public/logo-final.svg`
+- **Foto’s:** niet meer gebruikt (alle foto-componenten zijn vervangen door tekst + decoratieve logo/lines)
 
 ## Teksten & content
 
@@ -59,3 +55,16 @@ Alles in **`src/content/site.ts`** (nav, hero, about, diensten, projecten, conta
 npm run build
 npm start
 ```
+
+## GitHub Pages (statische export)
+
+Build pravi folder **`out/`** (čist HTML, CSS, JS).
+
+1. Repo → **Settings → Pages**: Source **GitHub Actions**
+2. Geen extra secrets nodig
+3. Push na `main` pokreće [deploy-github-pages](.github/workflows/deploy-github-pages.yml)
+
+- Repo **`username.github.io`** → sajt na `https://username.github.io/` (`NEXT_PUBLIC_BASE_PATH` prazan)
+- Običan repo npr. **`onzebouwgroep.nl`** → `https://username.github.io/onzebouwgroep.nl/`
+
+Lokalno sa podputanjom: `NEXT_PUBLIC_BASE_PATH=/ime-repa npm run build` pa otvori `out/index.html` preko lokalnog servera (ne `file://`).

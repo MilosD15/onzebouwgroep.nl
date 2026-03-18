@@ -1,21 +1,5 @@
-import Image from 'next/image'
 import { projects } from '@/content/site'
 import FadeIn from '@/components/FadeIn'
-
-function ProjectPlaceholder({ label }: { label: string }) {
-  return (
-    <div
-      className="flex h-full min-h-[200px] flex-col items-center justify-center gap-2 bg-gradient-to-br from-foreground/[0.06] to-brand-gray p-4 text-center sm:min-h-[220px]"
-      role="img"
-      aria-label={label}
-    >
-      <span className="rounded-full bg-brand-yellow/80 px-2.5 py-0.5 text-xs font-semibold text-foreground">
-        Projectfoto volgt
-      </span>
-      <span className="text-xs text-muted">Afbeelding wordt later toegevoegd</span>
-    </div>
-  )
-}
 
 export default function ProjectsSection() {
   const featured = projects.find((p) => p.featured)
@@ -42,19 +26,21 @@ export default function ProjectsSection() {
 
         {featured && (
           <FadeIn className="mt-12">
-            <article className="overflow-hidden rounded-[var(--radius-lg)] border border-black/5 bg-brand-gray shadow-[var(--shadow-card)] lg:grid lg:grid-cols-2 lg:gap-0">
-              <div className="relative aspect-video lg:aspect-auto lg:min-h-[320px]">
-                {featured.imageSrc ? (
-                  <Image
-                    src={featured.imageSrc}
-                    alt={featured.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                ) : (
-                  <ProjectPlaceholder label={`Referentie: ${featured.title}`} />
-                )}
+            <article className="overflow-hidden rounded-(--radius-lg) border border-black/5 bg-brand-gray shadow-(--shadow-card) lg:grid lg:grid-cols-2 lg:gap-0">
+              <div className="relative aspect-video overflow-hidden lg:aspect-auto lg:min-h-[320px]">
+                <div
+                  className="absolute inset-0 opacity-30"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px)',
+                    backgroundSize: '28px 28px',
+                  }}
+                  aria-hidden
+                />
+                <div
+                  className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-black/10"
+                  aria-hidden
+                />
               </div>
               <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                 <span className="text-xs font-semibold uppercase tracking-wider text-brand-red">
@@ -85,19 +71,21 @@ export default function ProjectsSection() {
           {rest.map((project, i) => (
             <li key={project.id}>
               <FadeIn delay={i * 0.06}>
-                <article className="overflow-hidden rounded-[var(--radius-lg)] border border-black/5 bg-white shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 hover:shadow-lg">
-                  <div className="relative aspect-[16/10]">
-                    {project.imageSrc ? (
-                      <Image
-                        src={project.imageSrc}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 100vw, 33vw"
-                      />
-                    ) : (
-                      <ProjectPlaceholder label={project.title} />
-                    )}
+                <article className="overflow-hidden rounded-(--radius-lg) border border-black/5 bg-white shadow-(--shadow-card) transition-transform hover:-translate-y-0.5 hover:shadow-lg">
+                  <div className="relative h-[96px] overflow-hidden bg-brand-gray/40" aria-hidden>
+                    <div
+                      className="absolute inset-0 opacity-30"
+                      style={{
+                        backgroundImage:
+                          'linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px)',
+                        backgroundSize: '24px 24px',
+                      }}
+                      aria-hidden
+                    />
+                    <div
+                      className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-black/5"
+                      aria-hidden
+                    />
                   </div>
                   <div className="p-5">
                     <h3 className="text-lg font-semibold text-foreground">

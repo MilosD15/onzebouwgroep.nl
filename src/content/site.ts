@@ -24,16 +24,12 @@ export const hero = {
   ctaPrimary: 'Offerte aanvragen',
   ctaSecondary: 'Contact opnemen',
   ctaProjects: 'Bekijk onze projecten',
-  imageSrc: '/images/radnici-na-skeli.png',
-  imageAlt: 'Schilderwerk op locatie — team aan het werk op steigers',
 }
 
 export const about = {
   title: 'Over Onze Bouwgroep',
   body:
     'Onze Bouwgroep is een betrouwbare partner voor schilderwerk, renovatie en diverse bouwwerkzaamheden in Nederland. Wij werken aan woningen, gebouwen en uiteenlopende projecten met oog voor kwaliteit, afwerking en duidelijke communicatie.',
-  imageSrc: '/images/materijali.png',
-  imageAlt: 'Kwaliteitsmaterialen en professionele afwerking op de bouwplaats',
 }
 
 export type Service = {
@@ -95,8 +91,6 @@ export type Project = {
   location: string
   description: string
   featured?: boolean
-  /** Set to real path e.g. /images/project-1.jpg when photos are ready */
-  imageSrc?: string
 }
 
 export const projects: Project[] = [
@@ -108,7 +102,6 @@ export const projects: Project[] = [
     description:
       'Professioneel schilderwerk en renovatie van buitengevels.',
     featured: true,
-    imageSrc: '/images/radnici-farbaju-prozor.png',
   },
   {
     id: 'p2',
@@ -116,7 +109,6 @@ export const projects: Project[] = [
     type: 'Renovatie',
     location: 'Alphen aan den Rijn',
     description: 'Binnen- en buitenschilderwerk en kleine verbouwingen.',
-    imageSrc: '/images/auto.png',
   },
   {
     id: 'p3',
@@ -124,7 +116,6 @@ export const projects: Project[] = [
     type: 'Binnenschilderwerk',
     location: 'Den Haag',
     description: 'Snelle uitvoering met minimale overlast voor huurders.',
-    imageSrc: '/images/radnici-na-skeli.png',
   },
   {
     id: 'p4',
@@ -132,7 +123,6 @@ export const projects: Project[] = [
     type: 'Buitenschilderwerk',
     location: 'Utrecht',
     description: 'Complete gevelbehandeling en onderhoudsplan.',
-    imageSrc: '/images/materijali.png',
   },
 ]
 
@@ -153,16 +143,6 @@ export const contact = {
   intro: 'Vraag direct een offerte aan of neem contact met ons op.',
   ctaQuote: 'Vraag direct een offerte aan',
   ctaContact: 'Neem contact met ons op',
-  formName: 'Naam',
-  formEmail: 'E-mail',
-  formPhone: 'Telefoon (optioneel)',
-  formMessage: 'Bericht',
-  formSubmit: 'Versturen',
-  formSuccess: 'Bedankt! We nemen zo snel mogelijk contact met u op.',
-  formError: 'Er ging iets mis. Probeer het opnieuw of bel ons.',
-  formValidation: 'Vul naam, e-mail en bericht in.',
-  formConfigHint:
-    'Stel WEB3FORMS_ACCESS_KEY in (.env.local) om het formulier te activeren.',
 }
 
 export const footer = {
